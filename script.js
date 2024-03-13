@@ -16,7 +16,7 @@ function go(imageData) {
     return curr;
 }
 
-function handleFileSelect(event) {
+function select(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = function (event) {
@@ -40,7 +40,7 @@ function handleFileSelect(event) {
     reader.readAsDataURL(file);
 }
 
-function copyASCII() {
+function copyButton() {
     const asciiArt = document.getElementById('asciiArt').innerText;
     navigator.clipboard.writeText(asciiArt)
         .then(() => {

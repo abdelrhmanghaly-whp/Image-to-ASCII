@@ -33,7 +33,7 @@ function select(event) {
             const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
             const asciiArt = go(imageData);
             document.getElementById('asciiArt').innerText = asciiArt;
-            document.getElementById('copyButton').style.display = 'inline-block'; // Show the button
+            document.getElementById('copyButton').style.display = 'inline-block';
         };
     };
 

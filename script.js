@@ -1,7 +1,7 @@
 document.getElementById('uploadInput').addEventListener('change', handleFileSelect, false);
 document.getElementById('copyButton').addEventListener('click', copyASCII, false);
 
-function go(imageData) {
+const go = (imageData) => {
     const { data, width, height } = imageData;
     let curr = '';
     for (let i = 0; i < height; i += 2) {
@@ -14,15 +14,15 @@ function go(imageData) {
         curr += '\n';
     }
     return curr;
-}
+};
 
-function select(event) {
+const select = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
-    reader.onload = function (event) {
+    reader.onload = (event) => {
         const img = new Image();
         img.src = event.target.result;
-        img.onload = function () {
+        img.onload = () => {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
             const scale = img.width / img.height;
@@ -38,9 +38,9 @@ function select(event) {
     };
 
     reader.readAsDataURL(file);
-}
+};
 
-function copyButton() {
+const copyButton = () => {
     const asciiArt = document.getElementById('asciiArt').innerText;
     navigator.clipboard.writeText(asciiArt)
         .then(() => {
@@ -49,4 +49,4 @@ function copyButton() {
         .catch((error) => {
             console.error('Failed to copy :(', error);
         });
-}
+};

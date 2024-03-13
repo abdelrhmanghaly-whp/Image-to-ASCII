@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii Art</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generate Your ASCII Image</h1>
+        <label for="uploadInput" class="file-input-container">
+            <img src="images/upload_icon.png" alt="Upload Icon" class="upload-icon">
+            <span class="file-input-label">Upload Image</span>
+            <input type="file" id="uploadInput" accept="image/*">
+        </label>
+        <div id="asciiArt" class="ascii-container"></div>
+        <button id="copyButton" class="copy-button">Copy</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

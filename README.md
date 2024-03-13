@@ -14,11 +14,11 @@ This project provides a straightforward way to convert images into ASCII art dir
 
 ## Installation
 
-Since this is a web application, there's no installation process required. Simply access the [live demo](https://abdelrhmanghaly-whp.github.io/Image-to-ASCII/) to start generating ASCII art.
+Since this is a web application, there's no installation process required. Simply access the <b>[live demo](https://abdelrhmanghaly-whp.github.io/Image-to-ASCII/)</b> to start generating ASCII art.
 
 ## Usage
 
-1. Visit the [live demo](https://abdelrhmanghaly-whp.github.io/Image-to-ASCII/).
+1. Visit the <b>[live demo](https://abdelrhmanghaly-whp.github.io/Image-to-ASCII/)</b>.
 2. Click on the "Upload Image" button and select an image file from your device.
 3. Once the image is uploaded, the application will display the ASCII art representation of the image.
 4. Optionally, click the "Copy" button to copy the ASCII art to your clipboard.

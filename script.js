@@ -1,7 +1,7 @@
-document.getElementById('uploadInput').addEventListener('change', handleFileSelect, false);
-document.getElementById('copyButton').addEventListener('click', copyASCII, false);
+document.getElementById('uploadInput').addEventListener('change', select, false);
+document.getElementById('copyButton').addEventListener('click', copyButton, false);
 
-const go = (imageData) => {
+function go(imageData) {
     const { data, width, height } = imageData;
     let curr = '';
     for (let i = 0; i < height; i += 2) {
@@ -14,15 +14,15 @@ const go = (imageData) => {
         curr += '\n';
     }
     return curr;
-};
+}
 
-const select = (event) => {
+function select(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
-    reader.onload = (event) => {
+    reader.onload = function (event) {
         const img = new Image();
         img.src = event.target.result;
-        img.onload = () => {
+        img.onload = function () {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
             const scale = img.width / img.height;
@@ -33,14 +33,14 @@ const select = (event) => {
             const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
             const asciiArt = go(imageData);
             document.getElementById('asciiArt').innerText = asciiArt;
-            document.getElementById('copyButton').style.display = 'inline-block';
+            document.getElementById('copyButton').style.display = 'inline-block'; // Show the button
         };
     };
 
     reader.readAsDataURL(file);
-};
+}
 
-const copyButton = () => {
+function copyButton() {
     const asciiArt = document.getElementById('asciiArt').innerText;
     navigator.clipboard.writeText(asciiArt)
         .then(() => {
@@ -49,4 +49,4 @@ const copyButton = () => {
         .catch((error) => {
             console.error('Failed to copy :(', error);
         });
-};
+}
